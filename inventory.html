@@ -301,11 +301,6 @@
 
           <div class="inventory-main">
             <div class="cars-grid inventory-cars-grid">
-              <!-- Cars rendered by JS from localStorage (admin/admin.js -> getCars()) -->
-            </div>
-
-            <!-- Static reference cards kept for fallback (hidden by render) -->
-            <template id="legacy-inventory-cards">
 
               <article class="car-card" data-id="toyota-fortuner-2022" data-make="toyota" data-type="suv" data-year="2022" data-price="9500000" data-trans="automatic" data-mileage="25000" data-color="white" data-fuel="diesel" data-drive="4wd" data-features="sunroof push-start leather-seats camera" data-search="toyota fortuner suv 2022">
                 <div class="car-media">
@@ -529,7 +524,7 @@
                 </div>
               </article>
 
-            </template>
+            </div>
 
             <p id="empty-results" class="empty-results" hidden>
               No vehicles match your filters. <button type="button" class="link-reset" data-reset-link>Reset filters</button> to start over.
