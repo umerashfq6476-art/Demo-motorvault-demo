@@ -8,8 +8,9 @@
   const REAR_IMG     = 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341';
   const PROFILE_IMG  = 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8';
 
-  const CAR_DATA = {
-    'toyota-fortuner-2022': {
+  const CAR_DATA = [
+    {
+      id: 1, slug: 'toyota-fortuner-2022',
       title: 'Toyota Fortuner 2022', trim: 'Sigma 4 · 2.7L Petrol',
       price: 'PKR 95,00,000', short: 'PKR 95 Lac',
       year: '2022', mileage: '28,000 km', engine: '2.7L 4-Cylinder',
@@ -24,7 +25,8 @@
       hero: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70',
       gallery: ['https://images.unsplash.com/photo-1503376780353-7e6692767b70', REAR_IMG, INTERIOR_IMG, PROFILE_IMG],
     },
-    'honda-civic-2023': {
+    {
+      id: 2, slug: 'honda-civic-2023',
       title: 'Honda Civic 2023', trim: 'Oriel · 1.5L VTEC Turbo',
       price: 'PKR 72,00,000', short: 'PKR 72 Lac',
       year: '2023', mileage: '8,000 km', engine: '1.5L 4-Cyl Turbo',
@@ -39,7 +41,8 @@
       hero: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6',
       gallery: ['https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6', REAR_IMG, INTERIOR_IMG, PROFILE_IMG],
     },
-    'bmw-x5-2021': {
+    {
+      id: 3, slug: 'bmw-x5-2021',
       title: 'BMW X5 2021', trim: 'xDrive40i · 3.0L M Sport',
       price: 'PKR 2,10,00,000', short: 'PKR 2.1 Crore',
       year: '2021', mileage: '35,000 km', engine: '3.0L Turbo I6',
@@ -54,7 +57,8 @@
       hero: 'https://images.unsplash.com/photo-1555215695-3004980ad54e',
       gallery: ['https://images.unsplash.com/photo-1555215695-3004980ad54e', REAR_IMG, INTERIOR_IMG, PROFILE_IMG],
     },
-    'mercedes-c-class-2022': {
+    {
+      id: 4, slug: 'mercedes-c-class-2022',
       title: 'Mercedes C-Class 2022', trim: 'C 200 AMG Line · 2.0L Turbo',
       price: 'PKR 1,80,00,000', short: 'PKR 1.8 Crore',
       year: '2022', mileage: '18,000 km', engine: '2.0L Turbo + EQ Boost',
@@ -69,7 +73,8 @@
       hero: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8',
       gallery: ['https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8', REAR_IMG, INTERIOR_IMG, PROFILE_IMG],
     },
-    'toyota-land-cruiser-2023': {
+    {
+      id: 5, slug: 'toyota-land-cruiser-2023',
       title: 'Toyota Land Cruiser 2023', trim: 'ZX 300 · 3.5L Twin-Turbo V6',
       price: 'PKR 2,85,00,000', short: 'PKR 2.85 Crore',
       year: '2023', mileage: '15,000 km', engine: '3.5L Twin-Turbo V6',
@@ -84,7 +89,8 @@
       hero: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf',
       gallery: ['https://images.unsplash.com/photo-1533473359331-0135ef1b58bf', REAR_IMG, INTERIOR_IMG, PROFILE_IMG],
     },
-    'suzuki-alto-2023': {
+    {
+      id: 6, slug: 'suzuki-alto-2023',
       title: 'Suzuki Alto 2023', trim: 'VXL AGS · 0.66L',
       price: 'PKR 28,00,000', short: 'PKR 28 Lac',
       year: '2023', mileage: '12,000 km', engine: '0.66L 3-Cylinder',
@@ -99,7 +105,8 @@
       hero: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d',
       gallery: ['https://images.unsplash.com/photo-1541899481282-d53bffe3c35d', REAR_IMG, INTERIOR_IMG, PROFILE_IMG],
     },
-    'kia-sportage-2023': {
+    {
+      id: 7, slug: 'kia-sportage-2023',
       title: 'KIA Sportage 2023', trim: 'AWD · 2.0L Petrol',
       price: 'PKR 85,00,000', short: 'PKR 85 Lac',
       year: '2023', mileage: '10,000 km', engine: '2.0L 4-Cylinder',
@@ -114,7 +121,8 @@
       hero: 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8',
       gallery: ['https://images.unsplash.com/photo-1494976388531-d1058494cdd8', REAR_IMG, INTERIOR_IMG, 'https://images.unsplash.com/photo-1503376780353-7e6692767b70'],
     },
-    'hyundai-tucson-2022': {
+    {
+      id: 8, slug: 'hyundai-tucson-2022',
       title: 'Hyundai Tucson 2022', trim: 'GLS Sport · 2.0L',
       price: 'PKR 78,00,000', short: 'PKR 78 Lac',
       year: '2022', mileage: '22,000 km', engine: '2.0L 4-Cylinder',
@@ -129,7 +137,8 @@
       hero: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d',
       gallery: ['https://images.unsplash.com/photo-1552519507-da3b142c6e3d', REAR_IMG, INTERIOR_IMG, PROFILE_IMG],
     },
-    'toyota-corolla-2023': {
+    {
+      id: 9, slug: 'toyota-corolla-2023',
       title: 'Toyota Corolla 2023', trim: 'Altis Grande · 1.8L',
       price: 'PKR 58,00,000', short: 'PKR 58 Lac',
       year: '2023', mileage: '14,000 km', engine: '1.8L 4-Cylinder',
@@ -144,7 +153,8 @@
       hero: 'https://images.unsplash.com/photo-1590362891991-f776e747a588',
       gallery: ['https://images.unsplash.com/photo-1590362891991-f776e747a588', REAR_IMG, INTERIOR_IMG, PROFILE_IMG],
     },
-    'honda-brv-2022': {
+    {
+      id: 10, slug: 'honda-brv-2022',
       title: 'Honda BR-V 2022', trim: 'i-VTEC S · 1.5L',
       price: 'PKR 52,00,000', short: 'PKR 52 Lac',
       year: '2022', mileage: '30,000 km', engine: '1.5L i-VTEC',
@@ -159,7 +169,8 @@
       hero: 'https://images.unsplash.com/photo-1581540222194-0def2dda95b8',
       gallery: ['https://images.unsplash.com/photo-1581540222194-0def2dda95b8', REAR_IMG, INTERIOR_IMG, PROFILE_IMG],
     },
-    'audi-a3-2021': {
+    {
+      id: 11, slug: 'audi-a3-2021',
       title: 'Audi A3 2021', trim: '35 TFSI S Line · 1.4L',
       price: 'PKR 1,40,00,000', short: 'PKR 1.4 Crore',
       year: '2021', mileage: '40,000 km', engine: '1.4L TFSI Turbo',
@@ -174,7 +185,8 @@
       hero: 'https://images.unsplash.com/photo-1583121274602-3e2820c69888',
       gallery: ['https://images.unsplash.com/photo-1583121274602-3e2820c69888', REAR_IMG, INTERIOR_IMG, PROFILE_IMG],
     },
-    'suzuki-cultus-2023': {
+    {
+      id: 12, slug: 'suzuki-cultus-2023',
       title: 'Suzuki Cultus 2023', trim: 'VXL Auto · 1.0L',
       price: 'PKR 30,00,000', short: 'PKR 30 Lac',
       year: '2023', mileage: '15,000 km', engine: '1.0L 3-Cylinder',
@@ -189,7 +201,9 @@
       hero: 'https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98',
       gallery: ['https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98', REAR_IMG, INTERIOR_IMG, PROFILE_IMG],
     },
-  };
+  ];
+
+  const getCarById = (id) => CAR_DATA.find((c) => String(c.id) === String(id));
 
   const buildImgUrl = (base, w = 1400, q = 80) =>
     base + (base.includes('?') ? '&' : '?') + 'auto=format&fit=crop&w=' + w + '&q=' + q;
@@ -279,24 +293,36 @@
     requestAnimationFrame(tick);
   };
 
+  const statCounters = document.querySelectorAll('.stat-count[data-target]');
+
   if ('IntersectionObserver' in window && revealTargets.length) {
     const io = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
         entry.target.classList.add('is-visible');
-        entry.target.querySelectorAll('.stat-count[data-target]').forEach(animateCounter);
         observer.unobserve(entry.target);
       });
-    }, { threshold: 0.2, rootMargin: '0px 0px -10% 0px' });
+    }, { threshold: 0.15, rootMargin: '0px 0px -5% 0px' });
 
     revealTargets.forEach((el) => io.observe(el));
   } else {
-    // Fallback: just show + set final values
-    revealTargets.forEach((el) => {
-      el.classList.add('is-visible');
-      el.querySelectorAll('.stat-count[data-target]').forEach((c) => {
-        c.textContent = (parseInt(c.dataset.target, 10) || 0).toLocaleString() + (c.dataset.suffix || '');
+    revealTargets.forEach((el) => el.classList.add('is-visible'));
+  }
+
+  // Dedicated counter observer — fires independently of reveal-on-scroll
+  if ('IntersectionObserver' in window && statCounters.length) {
+    const counterIO = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
       });
+    }, { threshold: 0.1, rootMargin: '0px 0px -10% 0px' });
+
+    statCounters.forEach((el) => counterIO.observe(el));
+  } else {
+    statCounters.forEach((c) => {
+      c.textContent = (parseInt(c.dataset.target, 10) || 0).toLocaleString() + (c.dataset.suffix || '');
     });
   }
 
@@ -753,8 +779,8 @@
   if (isDetailPage) {
     const params = new URLSearchParams(window.location.search);
     const requestedId = params.get('id');
-    const carId = (requestedId && CAR_DATA[requestedId]) ? requestedId : Object.keys(CAR_DATA)[0];
-    const car = CAR_DATA[carId];
+    const car = getCarById(requestedId) || CAR_DATA[0];
+    const carId = car ? String(car.id) : '';
 
     if (car) {
       // <title> + breadcrumb
@@ -844,14 +870,10 @@
       // Related cars — show three other cars (cycle through registry)
       const relatedGrid = document.querySelector('.cd-related-grid');
       if (relatedGrid) {
-        const otherIds = Object.keys(CAR_DATA).filter((k) => k !== carId);
-        // Pick three at deterministic positions
-        const pick = [];
-        for (let i = 0; i < 3 && i < otherIds.length; i++) {
-          pick.push(otherIds[(otherIds.length + i) % otherIds.length]);
-        }
-        relatedGrid.innerHTML = pick.map((id) => {
-          const c = CAR_DATA[id];
+        const others = CAR_DATA.filter((c) => String(c.id) !== carId);
+        const pick = others.slice(0, 3);
+        relatedGrid.innerHTML = pick.map((c) => {
+          const id = c.id;
           return `
             <article class="car-card">
               <div class="car-media">
