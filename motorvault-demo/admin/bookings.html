@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test Drive Requests | MotorVault Admin</title>
+  <meta name="robots" content="noindex,nofollow" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="admin.css" />
+  <script src="admin.js"></script>
+  <script>checkAuth();</script>
+</head>
+<body class="admin-body">
+
+  <aside class="admin-sidebar" aria-label="Admin navigation">
+    <div class="sidebar-brand">
+      <a href="dashboard.html" class="brand-logo">MOTOR<span class="accent">VAULT</span></a>
+      <div class="sidebar-sub">Admin Panel</div>
+    </div>
+    <nav class="admin-nav">
+      <div class="admin-nav-section">Manage</div>
+      <a href="dashboard.html" class="admin-nav-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+        Dashboard
+      </a>
+      <a href="cars.html" class="admin-nav-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2-5a3 3 0 0 1 2.83-2h8.34A3 3 0 0 1 19 8l2 5"/><path d="M3 13h18v5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1H7v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><circle cx="7" cy="16" r="1"/><circle cx="17" cy="16" r="1"/></svg>
+        Car Listings
+      </a>
+      <a href="add-car.html" class="admin-nav-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        Add New Car
+      </a>
+      <a href="bookings.html" class="admin-nav-link is-active">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Test Drive Requests
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <button type="button" id="logout-btn" class="logout-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Logout
+      </button>
+    </div>
+  </aside>
+
+  <div class="admin-main">
+    <header class="admin-topbar">
+      <div class="topbar-left">
+        <button type="button" id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle navigation">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <h1 class="admin-page-title">Test Drive Requests</h1>
+      </div>
+      <span id="count-pill" style="color: var(--admin-muted); font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase;"></span>
+    </header>
+
+    <div class="admin-content">
+
+      <div class="toolbar">
+        <input type="text" id="search" class="input grow" placeholder="Search by name, email, or car..." />
+        <select id="filter-status" class="select" style="max-width: 200px;">
+          <option value="">All statuses</option>
+          <option value="pending">Pending</option>
+          <option value="confirmed">Confirmed</option>
+          <option value="completed">Completed</option>
+          <option value="cancelled">Cancelled</option>
+        </select>
+      </div>
+
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Customer</th>
+              <th>Contact</th>
+              <th>Car</th>
+              <th>Scheduled</th>
+              <th>Received</th>
+              <th>Status</th>
+              <th style="text-align: right;">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="bookings-body"></tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Detail modal -->
+  <div class="modal-backdrop" id="detail-modal" role="dialog" aria-modal="true">
+    <div class="modal" style="max-width: 520px;">
+      <h3 class="modal-title" id="detail-title">Booking details</h3>
+      <div id="detail-body" style="color:#ddd; font-size: 0.92rem; line-height: 1.7;"></div>
+      <div class="modal-actions" style="margin-top: 1.5rem;">
+        <button type="button" class="btn btn-outline" id="detail-close">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete confirm modal -->
+  <div class="modal-backdrop" id="delete-modal" role="dialog" aria-modal="true">
+    <div class="modal">
+      <h3 class="modal-title">Delete this request?</h3>
+      <p class="modal-text">
+        You're about to permanently remove the booking from <strong id="delete-name"></strong>.
+        This action cannot be undone.
+      </p>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-outline" id="delete-cancel">Cancel</button>
+        <button type="button" class="btn btn-primary" id="delete-confirm">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    bindLayout();
+
+    const searchInput = document.getElementById("search");
+    const statusFilter = document.getElementById("filter-status");
+    const tbody = document.getElementById("bookings-body");
+    const countPill = document.getElementById("count-pill");
+
+    const detailModal = document.getElementById("detail-modal");
+    const detailTitle = document.getElementById("detail-title");
+    const detailBody = document.getElementById("detail-body");
+    const detailClose = document.getElementById("detail-close");
+
+    const deleteModal = document.getElementById("delete-modal");
+    const deleteName = document.getElementById("delete-name");
+    const deleteCancel = document.getElementById("delete-cancel");
+    const deleteConfirm = document.getElementById("delete-confirm");
+
+    const toast = document.getElementById("toast");
+    let pendingDeleteId = null;
+
+    function showToast(message, type = "success") {
+      toast.textContent = message;
+      toast.className = "toast is-visible " + type;
+      setTimeout(() => { toast.className = "toast " + type; }, 2200);
+    }
+
+    function applyFilters(bookings) {
+      const q = searchInput.value.trim().toLowerCase();
+      const status = statusFilter.value;
+      return bookings.filter(b => {
+        if (status && b.status !== status) return false;
+        if (q) {
+          const hay = `${b.name} ${b.email} ${b.phone} ${b.carName || ""}`.toLowerCase();
+          if (!hay.includes(q)) return false;
+        }
+        return true;
+      });
+    }
+
+    function render() {
+      const all = getBookings();
+      const pending = all.filter(b => b.status === "pending").length;
+      countPill.textContent = `${all.length} total · ${pending} pending`;
+
+      const bookings = applyFilters(all)
+        .sort((a, b) => (b.createdAt || "").localeCompare(a.createdAt || ""));
+
+      if (bookings.length === 0) {
+        tbody.innerHTML = `
+          <tr><td colspan="7">
+            <div class="empty-state">
+              <h3>No requests found</h3>
+              <p>${all.length === 0 ? 'Test drive requests will appear here.' : 'Try clearing the filters.'}</p>
+            </div>
+          </td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = bookings.map(b => `
+        <tr data-id="${escapeHtml(b.id)}">
+          <td>
+            <div class="cell-strong">${escapeHtml(b.name)}</div>
+            ${b.message ? `<div class="cell-sub" style="max-width: 240px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${escapeHtml(b.message)}</div>` : ''}
+          </td>
+          <td>
+            <div><a href="mailto:${escapeHtml(b.email)}" style="color:#fff;">${escapeHtml(b.email)}</a></div>
+            <div class="cell-sub"><a href="tel:${escapeHtml(b.phone)}" style="color: var(--admin-muted);">${escapeHtml(b.phone)}</a></div>
+          </td>
+          <td>${escapeHtml(b.carName || "—")}</td>
+          <td>
+            <div class="cell-strong">${formatDate(b.date)}</div>
+            <div class="cell-sub">${escapeHtml(b.time || "")}</div>
+          </td>
+          <td><span class="cell-sub">${formatDate(b.createdAt)}</span></td>
+          <td>
+            <select class="select" data-status="${escapeHtml(b.id)}" style="padding: 0.4rem 0.6rem; font-size: 0.82rem; min-width: 130px;">
+              <option value="pending"   ${b.status === "pending" ? "selected" : ""}>Pending</option>
+              <option value="confirmed" ${b.status === "confirmed" ? "selected" : ""}>Confirmed</option>
+              <option value="completed" ${b.status === "completed" ? "selected" : ""}>Completed</option>
+              <option value="cancelled" ${b.status === "cancelled" ? "selected" : ""}>Cancelled</option>
+            </select>
+          </td>
+          <td style="text-align: right;">
+            <div class="row-actions">
+              <button type="button" class="btn btn-outline btn-sm" data-view="${escapeHtml(b.id)}">View</button>
+              <button type="button" class="btn btn-danger btn-sm" data-delete="${escapeHtml(b.id)}">Delete</button>
+            </div>
+          </td>
+        </tr>
+      `).join("");
+    }
+
+    [searchInput, statusFilter].forEach(el => {
+      el.addEventListener("input", render);
+      el.addEventListener("change", render);
+    });
+
+    tbody.addEventListener("change", (e) => {
+      const sel = e.target.closest("[data-status]");
+      if (!sel) return;
+      const id = sel.getAttribute("data-status");
+      const newStatus = sel.value;
+      updateBookingStatus(id, newStatus);
+      showToast(`Status updated to ${newStatus}`, "success");
+      render();
+    });
+
+    tbody.addEventListener("click", (e) => {
+      const viewBtn = e.target.closest("[data-view]");
+      const delBtn = e.target.closest("[data-delete]");
+
+      if (viewBtn) {
+        const id = viewBtn.getAttribute("data-view");
+        const b = getBookings().find(x => x.id === id);
+        if (!b) return;
+        detailTitle.textContent = `Request from ${b.name}`;
+        detailBody.innerHTML = `
+          <div><strong style="color:#fff;">Email:</strong> <a href="mailto:${escapeHtml(b.email)}" style="color:#fca5a5;">${escapeHtml(b.email)}</a></div>
+          <div><strong style="color:#fff;">Phone:</strong> <a href="tel:${escapeHtml(b.phone)}" style="color:#fca5a5;">${escapeHtml(b.phone)}</a></div>
+          <div><strong style="color:#fff;">Car:</strong> ${escapeHtml(b.carName || "—")}</div>
+          <div><strong style="color:#fff;">Scheduled:</strong> ${formatDate(b.date)} at ${escapeHtml(b.time || "—")}</div>
+          <div><strong style="color:#fff;">Received:</strong> ${formatDate(b.createdAt)}</div>
+          <div><strong style="color:#fff;">Status:</strong> <span class="badge badge-${escapeHtml(b.status)}">${escapeHtml(b.status)}</span></div>
+          ${b.message ? `<div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--admin-border);"><strong style="color:#fff;">Message:</strong><br/>${escapeHtml(b.message)}</div>` : ''}
+        `;
+        detailModal.classList.add("is-open");
+      }
+
+      if (delBtn) {
+        const id = delBtn.getAttribute("data-delete");
+        const b = getBookings().find(x => x.id === id);
+        if (!b) return;
+        pendingDeleteId = id;
+        deleteName.textContent = b.name;
+        deleteModal.classList.add("is-open");
+      }
+    });
+
+    detailClose.addEventListener("click", () => detailModal.classList.remove("is-open"));
+    deleteCancel.addEventListener("click", () => deleteModal.classList.remove("is-open"));
+    [detailModal, deleteModal].forEach(m => {
+      m.addEventListener("click", (e) => { if (e.target === m) m.classList.remove("is-open"); });
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        detailModal.classList.remove("is-open");
+        deleteModal.classList.remove("is-open");
+      }
+    });
+
+    deleteConfirm.addEventListener("click", () => {
+      if (!pendingDeleteId) return;
+      deleteBooking(pendingDeleteId);
+      deleteModal.classList.remove("is-open");
+      pendingDeleteId = null;
+      render();
+      showToast("Request deleted", "success");
+    });
+
+    render();
+  </script>
+</body>
+</html>

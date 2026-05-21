@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Inventory | MotorVault</title>
+  <meta name="description" content="Browse the MotorVault inventory — handpicked luxury, performance, and prestige vehicles available in Islamabad." />
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://motorvault.example/inventory.html" />
+  <meta property="og:title" content="Inventory | MotorVault" />
+  <meta property="og:description" content="Browse the MotorVault inventory of premium vehicles available in Islamabad." />
+  <meta property="og:image" content="assets/og-image.jpg" />
+  <meta property="og:site_name" content="MotorVault" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header id="site-header">
+    <nav id="site-nav" class="container mx-auto px-6 flex items-center justify-between" aria-label="Primary">
+      <a href="index.html" class="brand-logo">MOTOR<span class="accent">VAULT</span></a>
+
+      <ul class="nav-links hidden lg:flex items-center gap-10">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="inventory.html" class="nav-link active">Inventory</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="hidden lg:flex items-center gap-3">
+        <a href="contact.html#book-test-drive" class="btn-red">Book Test Drive</a>
+        <a href="tel:+923170552359" class="btn-outlined" aria-label="Call us at +92 317 0552359">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+92 317 0552359</span>
+        </a>
+      </div>
+
+      <button type="button" class="lg:hidden icon-btn" id="mobile-menu-toggle" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </nav>
+
+    <div id="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu-header">
+        <a href="index.html" class="brand-logo">MOTOR<span class="accent">VAULT</span></a>
+        <button type="button" class="icon-btn" id="mobile-menu-close" aria-label="Close menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <ul class="mobile-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="inventory.html" class="nav-link active">Inventory</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="mobile-actions">
+        <a href="contact.html#book-test-drive" class="btn-red">Book Test Drive</a>
+        <a href="tel:+923170552359" class="btn-outlined">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+92 317 0552359</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="inventory-hero" class="inventory-hero" aria-label="Inventory Hero">
+      <div class="container mx-auto px-6">
+        <h1 class="inventory-title"><span class="title-accent" aria-hidden="true"></span>OUR INVENTORY</h1>
+        <p class="inventory-subtitle">Browse 500+ verified vehicles. Every car inspected, every detail checked.</p>
+      </div>
+    </section>
+
+    <section id="inventory-filters" class="inventory-filters reveal-on-scroll" aria-label="Filters">
+      <div class="container mx-auto px-6">
+        <form id="filter-bar" class="filter-bar" role="search" aria-label="Vehicle search filters">
+          <div class="filter-search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="search" id="filter-search-input" placeholder="Search by make, model, or keyword" aria-label="Search vehicles" />
+          </div>
+
+          <div class="filter-selects">
+            <div class="filter-field">
+              <label for="f-make" class="filter-label">Make</label>
+              <select id="f-make" class="filter-select" aria-label="Filter by make">
+                <option value="">All Makes</option>
+                <option value="toyota">Toyota</option>
+                <option value="honda">Honda</option>
+                <option value="bmw">BMW</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="suzuki">Suzuki</option>
+                <option value="kia">KIA</option>
+                <option value="hyundai">Hyundai</option>
+                <option value="audi">Audi</option>
+              </select>
+            </div>
+
+            <div class="filter-field">
+              <label for="f-type" class="filter-label">Body Type</label>
+              <select id="f-type" class="filter-select" aria-label="Filter by body type">
+                <option value="">All Types</option>
+                <option value="suv">SUV</option>
+                <option value="sedan">Sedan</option>
+                <option value="hatchback">Hatchback</option>
+                <option value="luxury">Luxury</option>
+                <option value="pickup">Pickup</option>
+              </select>
+            </div>
+
+            <div class="filter-field">
+              <label for="f-year" class="filter-label">Year</label>
+              <select id="f-year" class="filter-select" aria-label="Filter by year">
+                <option value="">All Years</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="older">Older</option>
+              </select>
+            </div>
+
+            <div class="filter-field">
+              <label for="f-price" class="filter-label">Price Range</label>
+              <select id="f-price" class="filter-select" aria-label="Filter by price">
+                <option value="">All Prices</option>
+                <option value="u30">Under 30 Lac</option>
+                <option value="30-60">30–60 Lac</option>
+                <option value="60-100">60–100 Lac</option>
+                <option value="1cr+">1 Crore+</option>
+              </select>
+            </div>
+
+            <div class="filter-field">
+              <label for="f-fuel" class="filter-label">Fuel</label>
+              <select id="f-fuel" class="filter-select" aria-label="Filter by fuel type">
+                <option value="">All Fuels</option>
+                <option value="petrol">Petrol</option>
+                <option value="diesel">Diesel</option>
+                <option value="hybrid">Hybrid</option>
+                <option value="electric">Electric</option>
+              </select>
+            </div>
+
+            <div class="filter-field">
+              <label for="f-trans" class="filter-label">Transmission</label>
+              <select id="f-trans" class="filter-select" aria-label="Filter by transmission">
+                <option value="">All</option>
+                <option value="automatic">Automatic</option>
+                <option value="manual">Manual</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-red filter-submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <span>Search</span>
+          </button>
+        </form>
+
+        <div id="active-filters" class="active-filters" hidden aria-live="polite" aria-label="Active filters">
+          <span class="active-filters-label">Active:</span>
+          <div class="active-chips" id="active-chips"></div>
+          <button type="button" class="active-clear" id="active-clear">Clear all</button>
+        </div>
+
+        <div class="results-row">
+          <div class="results-row-left">
+            <button type="button" class="mobile-filter-toggle" id="mobile-filter-toggle" aria-controls="inventory-sidebar" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+              <span>Filters</span>
+              <span class="mobile-filter-count" id="mobile-filter-count" hidden>0</span>
+            </button>
+            <p class="results-count">Showing <span id="results-shown">12</span> of <span id="results-total">500+</span> vehicles</p>
+          </div>
+          <div class="results-row-right">
+            <div class="sort-field">
+              <label for="f-sort" class="sort-label">Sort by</label>
+              <select id="f-sort" class="filter-select sort-select" aria-label="Sort vehicles">
+                <option value="featured">Featured</option>
+                <option value="newest">Newest Year</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="mileage-asc">Mileage: Low to High</option>
+                <option value="name-asc">Name: A–Z</option>
+              </select>
+            </div>
+            <button id="reset-filters" type="button" class="link-reset">Reset filters</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="inventory-grid" class="inventory-grid-section reveal-on-scroll" aria-label="Vehicle Listings">
+      <div class="container mx-auto px-6">
+        <div class="inventory-layout">
+
+          <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+          <aside class="inventory-sidebar" id="inventory-sidebar" aria-label="Refine results">
+            <div class="sidebar-header">
+              <h2 class="sidebar-title">Refine Results</h2>
+              <button type="button" class="sidebar-close" id="sidebar-close" aria-label="Close filters">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </button>
+            </div>
+
+            <div class="sidebar-section">
+              <h3 class="sidebar-heading">Price Range</h3>
+              <div class="range-dual">
+                <div class="range-dual-track" aria-hidden="true">
+                  <span class="range-dual-fill" id="price-range-fill"></span>
+                </div>
+                <input type="range" id="price-min" class="range-input range-dual-input" min="2000000" max="30000000" step="100000" value="2000000" aria-label="Minimum price" />
+                <input type="range" id="price-max" class="range-input range-dual-input" min="2000000" max="30000000" step="100000" value="30000000" aria-label="Maximum price" />
+              </div>
+              <div class="range-meta range-meta-dual">
+                <span id="price-min-label" class="range-meta-value">PKR 20 Lac</span>
+                <span class="range-meta-sep" aria-hidden="true">—</span>
+                <span id="price-max-label" class="range-meta-value">PKR 3 Cr</span>
+              </div>
+            </div>
+
+            <div class="sidebar-section">
+              <h3 class="sidebar-heading">Body Type</h3>
+              <div class="checkbox-group">
+                <label class="checkbox-item"><input type="checkbox" name="body" value="suv" /><span>SUV</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="body" value="sedan" /><span>Sedan</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="body" value="hatchback" /><span>Hatchback</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="body" value="luxury" /><span>Luxury</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="body" value="pickup" /><span>Pickup</span></label>
+              </div>
+            </div>
+
+            <div class="sidebar-section">
+              <h3 class="sidebar-heading">Mileage</h3>
+              <select id="f-mileage" class="filter-select sidebar-select" aria-label="Filter by mileage">
+                <option value="">Any mileage</option>
+                <option value="u10">Under 10,000 km</option>
+                <option value="10-30">10,000 – 30,000 km</option>
+                <option value="30-60">30,000 – 60,000 km</option>
+                <option value="60+">60,000+ km</option>
+              </select>
+            </div>
+
+            <div class="sidebar-section">
+              <h3 class="sidebar-heading">Drivetrain</h3>
+              <div class="checkbox-group">
+                <label class="checkbox-item"><input type="checkbox" name="drive" value="fwd" /><span>Front-Wheel Drive</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="drive" value="rwd" /><span>Rear-Wheel Drive</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="drive" value="awd" /><span>All-Wheel Drive</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="drive" value="4wd" /><span>4WD</span></label>
+              </div>
+            </div>
+
+            <div class="sidebar-section">
+              <h3 class="sidebar-heading">Color</h3>
+              <div class="checkbox-group color-checkbox-group">
+                <label class="checkbox-item"><input type="checkbox" name="color" value="white" /><span class="color-swatch" style="--swatch:#ffffff" aria-hidden="true"></span><span>White</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="color" value="black" /><span class="color-swatch" style="--swatch:#1a1a1a" aria-hidden="true"></span><span>Black</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="color" value="silver" /><span class="color-swatch" style="--swatch:#c0c0c0" aria-hidden="true"></span><span>Silver</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="color" value="grey" /><span class="color-swatch" style="--swatch:#6b6b6b" aria-hidden="true"></span><span>Grey</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="color" value="red" /><span class="color-swatch" style="--swatch:#b91c1c" aria-hidden="true"></span><span>Red</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="color" value="blue" /><span class="color-swatch" style="--swatch:#1e40af" aria-hidden="true"></span><span>Blue</span></label>
+              </div>
+            </div>
+
+            <div class="sidebar-section">
+              <h3 class="sidebar-heading">Features</h3>
+              <div class="checkbox-group">
+                <label class="checkbox-item"><input type="checkbox" name="feature" value="sunroof" /><span>Sunroof</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="feature" value="push-start" /><span>Push Start</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="feature" value="leather-seats" /><span>Leather Seats</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="feature" value="navigation" /><span>Navigation</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="feature" value="camera" /><span>Camera</span></label>
+              </div>
+            </div>
+
+            <div class="sidebar-section sidebar-section-toggle">
+              <label class="checkbox-item checkbox-item-toggle">
+                <input type="checkbox" id="f-favorites-only" />
+                <span>Show favorites only</span>
+              </label>
+            </div>
+
+            <div class="sidebar-footer">
+              <button type="button" class="btn-outlined sidebar-reset" id="sidebar-reset">Clear All Filters</button>
+              <button type="button" class="btn-red sidebar-apply" id="sidebar-apply">Apply &amp; View Results</button>
+            </div>
+          </aside>
+
+          <div class="inventory-main">
+            <div class="cars-grid inventory-cars-grid">
+              <!-- Cars rendered by JS from localStorage (admin/admin.js -> getCars()) -->
+            </div>
+
+            <!-- Static reference cards kept for fallback (hidden by render) -->
+            <template id="legacy-inventory-cards">
+
+              <article class="car-card" data-id="toyota-fortuner-2022" data-make="toyota" data-type="suv" data-year="2022" data-price="9500000" data-trans="automatic" data-mileage="25000" data-color="white" data-fuel="diesel" data-drive="4wd" data-features="sunroof push-start leather-seats camera" data-search="toyota fortuner suv 2022">
+                <div class="car-media">
+                  <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80" alt="Toyota Fortuner 2022" loading="lazy" />
+                  <span class="car-badge badge-featured">Featured</span>
+                </div>
+                <div class="car-body">
+                  <h3 class="car-name">Toyota Fortuner 2022</h3>
+                  <p class="car-meta">2022 · 25,000 km · Automatic</p>
+                  <p class="car-price">PKR 95 Lac</p>
+                  <div class="car-footer">
+                    <span class="car-engine">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 22V8a2 2 0 0 1 2-2h3l1-2h6l1 2h3a2 2 0 0 1 2 2v4"/><path d="M3 14h11"/><path d="M14 14h7v8h-7z"/></svg>
+                      <span>Diesel · 2.8L</span>
+                    </span>
+                    <a href="car-detail.html" class="btn-red btn-sm">View Details</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="car-card" data-id="honda-civic-2023" data-make="honda" data-type="sedan" data-year="2023" data-price="7200000" data-trans="automatic" data-mileage="8000" data-color="black" data-fuel="petrol" data-drive="fwd" data-features="push-start leather-seats navigation camera" data-search="honda civic sedan 2023">
+                <div class="car-media">
+                  <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=900&q=80" alt="Honda Civic 2023" loading="lazy" />
+                  <span class="car-badge badge-sold">Sold</span>
+                </div>
+                <div class="car-body">
+                  <h3 class="car-name">Honda Civic 2023</h3>
+                  <p class="car-meta">2023 · 8,000 km · Automatic</p>
+                  <p class="car-price">PKR 72 Lac</p>
+                  <div class="car-footer">
+                    <span class="car-engine">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 22V8a2 2 0 0 1 2-2h3l1-2h6l1 2h3a2 2 0 0 1 2 2v4"/><path d="M3 14h11"/><path d="M14 14h7v8h-7z"/></svg>
+                      <span>Petrol · 1.5L</span>
+                    </span>
+                    <a href="car-detail.html" class="btn-red btn-sm">View Details</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="car-card" data-id="bmw-x5-2021" data-make="bmw" data-type="suv luxury" data-year="2021" data-price="21000000" data-trans="automatic" data-mileage="35000" data-color="silver" data-fuel="petrol" data-drive="awd" data-features="sunroof push-start leather-seats navigation camera" data-search="bmw x5 suv luxury 2021">
+                <div class="car-media">
+                  <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=900&q=80" alt="BMW X5 2021" loading="lazy" />
+                  <span class="car-badge badge-featured">Featured</span>
+                </div>
+                <div class="car-body">
+                  <h3 class="car-name">BMW X5 2021</h3>
+                  <p class="car-meta">2021 · 35,000 km · Automatic</p>
+                  <p class="car-price">PKR 2.1 Crore</p>
+                  <div class="car-footer">
+                    <span class="car-engine">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 22V8a2 2 0 0 1 2-2h3l1-2h6l1 2h3a2 2 0 0 1 2 2v4"/><path d="M3 14h11"/><path d="M14 14h7v8h-7z"/></svg>
+                      <span>Petrol · 3.0L</span>
+                    </span>
+                    <a href="car-detail.html" class="btn-red btn-sm">View Details</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="car-card" data-id="mercedes-c-class-2022" data-make="mercedes" data-type="sedan luxury" data-year="2022" data-price="18000000" data-trans="automatic" data-mileage="18000" data-color="black" data-fuel="petrol" data-drive="rwd" data-features="sunroof push-start leather-seats navigation camera" data-search="mercedes c-class sedan luxury 2022">
+                <div class="car-media">
+                  <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=900&q=80" alt="Mercedes C-Class 2022" loading="lazy" />
+                </div>
+                <div class="car-body">
+                  <h3 class="car-name">Mercedes C-Class 2022</h3>
+                  <p class="car-meta">2022 · 18,000 km · Automatic</p>
+                  <p class="car-price">PKR 1.8 Crore</p>
+                  <div class="car-footer">
+                    <span class="car-engine">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 22V8a2 2 0 0 1 2-2h3l1-2h6l1 2h3a2 2 0 0 1 2 2v4"/><path d="M3 14h11"/><path d="M14 14h7v8h-7z"/></svg>
+                      <span>Petrol · 2.0L</span>
+                    </span>
+                    <a href="car-detail.html" class="btn-red btn-sm">View Details</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="car-card" data-id="toyota-land-cruiser-2023" data-make="toyota" data-type="suv luxury" data-year="2023" data-price="28500000" data-trans="automatic" data-mileage="15000" data-color="white" data-fuel="diesel" data-drive="4wd" data-features="sunroof push-start leather-seats navigation camera" data-search="toyota land cruiser suv luxury 2023">
+                <div class="car-media">
+                  <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=900&q=80" alt="Toyota Land Cruiser 2023" loading="lazy" />
+                  <span class="car-badge badge-featured">Featured</span>
+                </div>
+                <div class="car-body">
+                  <h3 class="car-name">Toyota Land Cruiser 2023</h3>
+                  <p class="car-meta">2023 · 15,000 km · Automatic</p>
+                  <p class="car-price">PKR 2.85 Crore</p>
+                  <div class="car-footer">
+                    <span class="car-engine">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 22V8a2 2 0 0 1 2-2h3l1-2h6l1 2h3a2 2 0 0 1 2 2v4"/><path d="M3 14h11"/><path d="M14 14h7v8h-7z"/></svg>
+                      <span>Diesel · 4.0L</span>
+                    </span>
+                    <a href="car-detail.html" class="btn-red btn-sm">View Details</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="car-card" data-id="suzuki-alto-2023" data-make="suzuki" data-type="hatchback" data-year="2023" data-price="2800000" data-trans="manual" data-mileage="12000" data-color="red" data-fuel="petrol" data-drive="fwd" data-features="" data-search="suzuki alto hatchback 2023">
+                <div class="car-media">
+                  <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=900&q=80" alt="Suzuki Alto 2023" loading="lazy" />
+                </div>
+                <div class="car-body">
+                  <h3 class="car-name">Suzuki Alto 2023</h3>
+                  <p class="car-meta">2023 · 12,000 km · Manual</p>
+                  <p class="car-price">PKR 28 Lac</p>
+                  <div class="car-footer">
+                    <span class="car-engine">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 22V8a2 2 0 0 1 2-2h3l1-2h6l1 2h3a2 2 0 0 1 2 2v4"/><path d="M3 14h11"/><path d="M14 14h7v8h-7z"/></svg>
+                      <span>Petrol · 0.66L</span>
+                    </span>
+                    <a href="car-detail.html" class="btn-red btn-sm">View Details</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="car-card" data-id="kia-sportage-2023" data-make="kia" data-type="suv" data-year="2023" data-price="8500000" data-trans="automatic" data-mileage="10000" data-color="white" data-fuel="petrol" data-drive="fwd" data-features="sunroof push-start leather-seats camera" data-search="kia sportage suv 2023">
+                <div class="car-media">
+                  <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=900&q=80" alt="KIA Sportage 2023" loading="lazy" />
+                  <span class="car-badge badge-featured">New Arrival</span>
+                </div>
+                <div class="car-body">
+                  <h3 class="car-name">KIA Sportage 2023</h3>
+                  <p class="car-meta">2023 · 10,000 km · Automatic</p>
+                  <p class="car-price">PKR 85 Lac</p>
+                  <div class="car-footer">
+                    <span class="car-engine">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 22V8a2 2 0 0 1 2-2h3l1-2h6l1 2h3a2 2 0 0 1 2 2v4"/><path d="M3 14h11"/><path d="M14 14h7v8h-7z"/></svg>
+                      <span>Petrol · 2.0L</span>
+                    </span>
+                    <a href="car-detail.html" class="btn-red btn-sm">View Details</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="car-card" data-id="hyundai-tucson-2022" data-make="hyundai" data-type="suv" data-year="2022" data-price="7800000" data-trans="automatic" data-mileage="22000" data-color="grey" data-fuel="petrol" data-drive="fwd" data-features="push-start leather-seats camera" data-search="hyundai tucson suv 2022">
+                <div class="car-media">
+                  <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=80" alt="Hyundai Tucson 2022" loading="lazy" />
+                </div>
+                <div class="car-body">
+                  <h3 class="car-name">Hyundai Tucson 2022</h3>
+                  <p class="car-meta">2022 · 22,000 km · Automatic</p>
+                  <p class="car-price">PKR 78 Lac</p>
+                  <div class="car-footer">
+                    <span class="car-engine">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 22V8a2 2 0 0 1 2-2h3l1-2h6l1 2h3a2 2 0 0 1 2 2v4"/><path d="M3 14h11"/><path d="M14 14h7v8h-7z"/></svg>
+                      <span>Petrol · 2.0L</span>
+                    </span>
+                    <a href="car-detail.html" class="btn-red btn-sm">View Details</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="car-card" data-id="toyota-corolla-2023" data-make="toyota" data-type="sedan" data-year="2023" data-price="5800000" data-trans="automatic" data-mileage="14000" data-color="silver" data-fuel="petrol" data-drive="fwd" data-features="push-start camera" data-search="toyota corolla sedan 2023">
+                <div class="car-media">
+                  <img src="https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=900&q=80" alt="Toyota Corolla 2023" loading="lazy" />
+                </div>
+                <div class="car-body">
+                  <h3 class="car-name">Toyota Corolla 2023</h3>
+                  <p class="car-meta">2023 · 14,000 km · Automatic</p>
+                  <p class="car-price">PKR 58 Lac</p>
+                  <div class="car-footer">
+                    <span class="car-engine">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 22V8a2 2 0 0 1 2-2h3l1-2h6l1 2h3a2 2 0 0 1 2 2v4"/><path d="M3 14h11"/><path d="M14 14h7v8h-7z"/></svg>
+                      <span>Petrol · 1.8L</span>
+                    </span>
+                    <a href="car-detail.html" class="btn-red btn-sm">View Details</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="car-card" data-id="honda-brv-2022" data-make="honda" data-type="suv" data-year="2022" data-price="5200000" data-trans="automatic" data-mileage="30000" data-color="white" data-fuel="petrol" data-drive="fwd" data-features="push-start camera" data-search="honda brv suv 2022">
+                <div class="car-media">
+                  <img src="https://images.unsplash.com/photo-1581540222194-0def2dda95b8?auto=format&fit=crop&w=900&q=80" alt="Honda BRV 2022" loading="lazy" />
+                </div>
+                <div class="car-body">
+                  <h3 class="car-name">Honda BRV 2022</h3>
+                  <p class="car-meta">2022 · 30,000 km · Automatic</p>
+                  <p class="car-price">PKR 52 Lac</p>
+                  <div class="car-footer">
+                    <span class="car-engine">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 22V8a2 2 0 0 1 2-2h3l1-2h6l1 2h3a2 2 0 0 1 2 2v4"/><path d="M3 14h11"/><path d="M14 14h7v8h-7z"/></svg>
+                      <span>Petrol · 1.5L</span>
+                    </span>
+                    <a href="car-detail.html" class="btn-red btn-sm">View Details</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="car-card" data-id="audi-a3-2021" data-make="audi" data-type="sedan luxury" data-year="2021" data-price="14000000" data-trans="automatic" data-mileage="40000" data-color="blue" data-fuel="petrol" data-drive="awd" data-features="sunroof push-start leather-seats navigation camera" data-search="audi a3 sedan luxury 2021">
+                <div class="car-media">
+                  <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=900&q=80" alt="Audi A3 2021" loading="lazy" />
+                  <span class="car-badge badge-featured">Featured</span>
+                </div>
+                <div class="car-body">
+                  <h3 class="car-name">Audi A3 2021</h3>
+                  <p class="car-meta">2021 · 40,000 km · Automatic</p>
+                  <p class="car-price">PKR 1.4 Crore</p>
+                  <div class="car-footer">
+                    <span class="car-engine">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 22V8a2 2 0 0 1 2-2h3l1-2h6l1 2h3a2 2 0 0 1 2 2v4"/><path d="M3 14h11"/><path d="M14 14h7v8h-7z"/></svg>
+                      <span>Petrol · 1.8L</span>
+                    </span>
+                    <a href="car-detail.html" class="btn-red btn-sm">View Details</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="car-card" data-id="suzuki-cultus-2023" data-make="suzuki" data-type="hatchback" data-year="2023" data-price="3000000" data-trans="automatic" data-mileage="15000" data-color="white" data-fuel="petrol" data-drive="fwd" data-features="" data-search="suzuki cultus hatchback 2023">
+                <div class="car-media">
+                  <img src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=900&q=80" alt="Suzuki Cultus 2023" loading="lazy" />
+                </div>
+                <div class="car-body">
+                  <h3 class="car-name">Suzuki Cultus 2023</h3>
+                  <p class="car-meta">2023 · 15,000 km · Automatic</p>
+                  <p class="car-price">PKR 30 Lac</p>
+                  <div class="car-footer">
+                    <span class="car-engine">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 22V8a2 2 0 0 1 2-2h3l1-2h6l1 2h3a2 2 0 0 1 2 2v4"/><path d="M3 14h11"/><path d="M14 14h7v8h-7z"/></svg>
+                      <span>Petrol · 1.0L</span>
+                    </span>
+                    <a href="car-detail.html" class="btn-red btn-sm">View Details</a>
+                  </div>
+                </div>
+              </article>
+
+            </template>
+
+            <p id="empty-results" class="empty-results" hidden>
+              No vehicles match your filters. <button type="button" class="link-reset" data-reset-link>Reset filters</button> to start over.
+            </p>
+
+            <div class="load-more-wrap">
+              <button id="load-more" type="button" class="btn-red btn-lg">Load More Vehicles</button>
+            </div>
+
+            <nav class="pagination" aria-label="Inventory pagination">
+              <button type="button" class="page-btn page-arrow" aria-label="Previous page" disabled>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <button type="button" class="page-btn is-active" aria-current="page">1</button>
+              <button type="button" class="page-btn">2</button>
+              <button type="button" class="page-btn">3</button>
+              <span class="page-ellipsis" aria-hidden="true">…</span>
+              <button type="button" class="page-btn">42</button>
+              <button type="button" class="page-btn page-arrow" aria-label="Next page">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+            </nav>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer">
+    <div class="footer-top-line" aria-hidden="true"></div>
+    <div class="container mx-auto px-6">
+      <div class="footer-grid">
+        <div class="footer-col footer-col--brand">
+          <a href="index.html" class="brand-logo footer-logo">MOTOR<span class="accent">VAULT</span></a>
+          <p class="footer-tagline">Drive the Difference</p>
+          <ul class="social-list" aria-label="Social media">
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a></li>
+            <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a></li>
+            <li><a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+            </a></li>
+            <li><a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.85a8.16 8.16 0 0 0 4.77 1.52V6.92a4.82 4.82 0 0 1-1.84-.23z"/></svg>
+            </a></li>
+          </ul>
+          <p class="footer-blurb">Pakistan's most trusted car marketplace.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="inventory.html">Inventory</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html#book-test-drive">Book Test Drive</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Inventory</h4>
+          <ul class="footer-links">
+            <li><a href="inventory.html?type=suv">SUVs</a></li>
+            <li><a href="inventory.html?type=sedan">Sedans</a></li>
+            <li><a href="inventory.html?type=luxury">Luxury Cars</a></li>
+            <li><a href="inventory.html?type=budget">Budget Cars</a></li>
+            <li><a href="inventory.html?sort=new">New Arrivals</a></li>
+            <li><a href="contact.html#sell">Sell Your Car</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Contact Us</h4>
+          <ul class="footer-contact">
+            <li>
+              <span class="contact-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <span>Blue Area, Islamabad</span>
+            </li>
+            <li>
+              <span class="contact-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </span>
+              <a href="tel:+923170552359">+92 317 0552359</a>
+            </li>
+            <li>
+              <span class="contact-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </span>
+              <a href="mailto:info@motorvault.pk">info@motorvault.pk</a>
+            </li>
+            <li>
+              <span class="contact-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </span>
+              <span>Mon–Sat: 9 AM – 7 PM</span>
+            </li>
+          </ul>
+          <a href="https://wa.me/923170552359" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.005 2C6.487 2 2.012 6.475 2.012 11.993a9.96 9.96 0 0 0 1.392 5.078L2 22l5.046-1.32a9.97 9.97 0 0 0 4.958 1.263h.004c5.518 0 9.993-4.475 9.993-9.993S17.523 2 12.005 2zm0 18.13h-.003a8.13 8.13 0 0 1-4.143-1.135l-.297-.176-3.077.807.822-2.998-.193-.307a8.12 8.12 0 0 1-1.243-4.328c0-4.484 3.65-8.134 8.137-8.134 2.172 0 4.213.846 5.748 2.383a8.077 8.077 0 0 1 2.382 5.755c-.001 4.483-3.65 8.133-8.133 8.133z"/></svg>
+            <span>Chat on WhatsApp</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 MotorVault. All rights reserved. Crafted by Umer.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/923170552359" target="_blank" rel="noopener noreferrer" class="whatsapp-fab" aria-label="Chat on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.005 2C6.487 2 2.012 6.475 2.012 11.993a9.96 9.96 0 0 0 1.392 5.078L2 22l5.046-1.32a9.97 9.97 0 0 0 4.958 1.263h.004c5.518 0 9.993-4.475 9.993-9.993S17.523 2 12.005 2z"/></svg>
+    <span class="whatsapp-fab-pulse" aria-hidden="true"></span>
+  </a>
+
+  <button type="button" id="scroll-to-top" class="scroll-top-btn" aria-label="Scroll to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="admin/admin.js"></script>
+  <script>
+    /* Render BEFORE script.js so its filter logic sees the cards. */
+    (function renderInventoryFromStore() {
+      const grid = document.querySelector('.inventory-cars-grid');
+      if (!grid || typeof getCars !== 'function') return;
+      const cars = getCars();
+      if (cars.length > 0) {
+        grid.innerHTML = cars.map(carToCardHTML).join('');
+
+        // Adapt price slider range so user-added cars at any price are reachable
+        const prices = cars.map(c => Number(c.price) || 0).filter(p => p > 0);
+        if (prices.length) {
+          const min = Math.min(...prices, 1000000);
+          const max = Math.max(...prices, 30000000);
+          const pmin = document.getElementById('price-min');
+          const pmax = document.getElementById('price-max');
+          if (pmin) { pmin.min = String(min); pmin.max = String(max); pmin.value = String(min); }
+          if (pmax) { pmax.min = String(min); pmax.max = String(max); pmax.value = String(max); }
+        }
+      }
+      const total = document.getElementById('results-total');
+      const shown = document.getElementById('results-shown');
+      if (total) total.textContent = String(cars.length);
+      if (shown) shown.textContent = String(cars.length);
+    })();
+
+    function carToCardHTML(c) {
+      const id        = String(c.id || '');
+      const make      = String(c.make || '').toLowerCase();
+      const model     = String(c.model || '');
+      const year      = String(c.year || '');
+      const price     = Number(c.price || 0);
+      const mileage   = Number(c.mileage || 0);
+      const trans     = String(c.transmission || '').toLowerCase();
+      const fuel      = String(c.fuel || '').toLowerCase();
+      const colorRaw  = String(c.color || '').toLowerCase();
+      const typeRaw   = String(c.type || '').toLowerCase();
+      const status    = String(c.status || 'available').toLowerCase();
+      const featured  = !!c.featured;
+      const featuresArr = Array.isArray(c.features) ? c.features : [];
+
+      const knownColors = ['white','black','silver','grey','gray','red','blue','green','brown','beige'];
+      const color = knownColors.find(k => colorRaw.includes(k)) || '';
+
+      // Derive type tags so existing inventory + homepage tab filters keep working
+      const typeTags = new Set();
+      if (typeRaw.includes('suv')) typeTags.add('suv');
+      if (typeRaw.includes('sedan')) typeTags.add('sedan');
+      if (typeRaw.includes('hatch')) typeTags.add('hatchback');
+      if (typeRaw.includes('coupe')) typeTags.add('coupe');
+      if (typeRaw.includes('truck') || typeRaw.includes('pickup')) typeTags.add('pickup');
+      if (typeRaw.includes('van')) typeTags.add('van');
+      if (typeRaw.includes('convert')) typeTags.add('convertible');
+      if (price >= 15000000) typeTags.add('luxury');
+      if (price < 5000000) typeTags.add('under-50');
+
+      const featureKeywords = featuresArr.map(f =>
+        String(f).toLowerCase()
+          .replace(/&/g, 'and')
+          .replace(/[^a-z0-9 ]/g, '')
+          .replace(/\s+/g, '-')
+      );
+
+      const search = [make, model, year, ...typeTags, color].filter(Boolean).join(' ').toLowerCase();
+
+      const priceLabel = formatPrice(price);
+      const mileageLabel = mileage.toLocaleString() + ' km';
+      const transLabel = c.transmission || '—';
+      const engineLabel = (c.fuel || '—');
+
+      const badge = status === 'sold'
+        ? '<span class="car-badge badge-sold">Sold</span>'
+        : (featured ? '<span class="car-badge badge-featured">Featured</span>' : '');
+
+      const img = c.image || 'https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=900&q=80';
+
+      return `
+        <article class="car-card"
+          data-id="${escapeHtml(id)}"
+          data-make="${escapeHtml(make)}"
+          data-type="${escapeHtml([...typeTags].join(' '))}"
+          data-year="${escapeHtml(year)}"
+          data-price="${escapeHtml(String(price))}"
+          data-trans="${escapeHtml(trans)}"
+          data-mileage="${escapeHtml(String(mileage))}"
+          data-color="${escapeHtml(color)}"
+          data-fuel="${escapeHtml(fuel)}"
+          data-drive=""
+          data-features="${escapeHtml(featureKeywords.join(' '))}"
+          data-search="${escapeHtml(search)}">
+          <div class="car-media">
+            <img src="${escapeHtml(img)}" alt="${escapeHtml(make + ' ' + model + ' ' + year)}" loading="lazy" />
+            ${badge}
+          </div>
+          <div class="car-body">
+            <h3 class="car-name">${escapeHtml(c.make || '')} ${escapeHtml(model)} ${escapeHtml(year)}</h3>
+            <p class="car-meta">${escapeHtml(year)} · ${escapeHtml(mileageLabel)} · ${escapeHtml(transLabel)}</p>
+            <p class="car-price">${escapeHtml(priceLabel)}</p>
+            <div class="car-footer">
+              <span class="car-engine">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 22V8a2 2 0 0 1 2-2h3l1-2h6l1 2h3a2 2 0 0 1 2 2v4"/><path d="M3 14h11"/><path d="M14 14h7v8h-7z"/></svg>
+                <span>${escapeHtml(engineLabel)}</span>
+              </span>
+              <a href="car-detail.html?id=${encodeURIComponent(id)}" class="btn-red btn-sm">View Details</a>
+            </div>
+          </div>
+        </article>`;
+    }
+  </script>
+  <script src="script.js"></script>
+  <script>
+    /* After script.js, if the store was empty, replace its filter-empty UI with our own. */
+    (function emptyStateCleanup() {
+      if (typeof getCars !== 'function') return;
+      if (getCars().length > 0) return;
+      const grid = document.querySelector('.inventory-cars-grid');
+      if (grid) {
+        grid.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 5rem 2rem; color: #888;">
+            <h3 style="color: #ccc; font-family: 'Rajdhani', sans-serif; font-size: 1.75rem; letter-spacing: 0.04em; margin-bottom: 0.5rem;">No vehicles available</h3>
+            <p style="font-size: 0.95rem;">Our inventory is being updated. Please check back soon.</p>
+          </div>`;
+      }
+      const empty = document.getElementById('empty-results');
+      if (empty) empty.hidden = true;
+      const loadMore = document.querySelector('.load-more-wrap');
+      if (loadMore) loadMore.style.display = 'none';
+      const pagination = document.querySelector('.pagination');
+      if (pagination) pagination.style.display = 'none';
+    })();
+
+    /* Auto-refresh when admin updates car data in another tab */
+    window.addEventListener('storage', (e) => {
+      if (e.key === 'motorvault_cars') location.reload();
+    });
+  </script>
+</body>
+</html>

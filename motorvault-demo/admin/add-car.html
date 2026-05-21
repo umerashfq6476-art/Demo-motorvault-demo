@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add New Car | MotorVault Admin</title>
+  <meta name="robots" content="noindex,nofollow" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="admin.css" />
+  <script src="admin.js"></script>
+  <script>checkAuth();</script>
+</head>
+<body class="admin-body">
+
+  <aside class="admin-sidebar" aria-label="Admin navigation">
+    <div class="sidebar-brand">
+      <a href="dashboard.html" class="brand-logo">MOTOR<span class="accent">VAULT</span></a>
+      <div class="sidebar-sub">Admin Panel</div>
+    </div>
+    <nav class="admin-nav">
+      <div class="admin-nav-section">Manage</div>
+      <a href="dashboard.html" class="admin-nav-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+        Dashboard
+      </a>
+      <a href="cars.html" class="admin-nav-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2-5a3 3 0 0 1 2.83-2h8.34A3 3 0 0 1 19 8l2 5"/><path d="M3 13h18v5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1H7v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><circle cx="7" cy="16" r="1"/><circle cx="17" cy="16" r="1"/></svg>
+        Car Listings
+      </a>
+      <a href="add-car.html" class="admin-nav-link is-active">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        Add New Car
+      </a>
+      <a href="bookings.html" class="admin-nav-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Test Drive Requests
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <button type="button" id="logout-btn" class="logout-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Logout
+      </button>
+    </div>
+  </aside>
+
+  <div class="admin-main">
+    <header class="admin-topbar">
+      <div class="topbar-left">
+        <button type="button" id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle navigation">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <h1 class="admin-page-title">Add New Car</h1>
+      </div>
+      <a href="cars.html" class="view-site-btn">← Back to Listings</a>
+    </header>
+
+    <div class="admin-content">
+
+      <section class="panel">
+        <form id="car-form" novalidate>
+          <div class="form-grid">
+
+            <div class="field">
+              <label class="label" for="make">Make</label>
+              <input class="input" type="text" id="make" name="make" required placeholder="e.g. Toyota" />
+            </div>
+
+            <div class="field">
+              <label class="label" for="model">Model</label>
+              <input class="input" type="text" id="model" name="model" required placeholder="e.g. Corolla" />
+            </div>
+
+            <div class="field">
+              <label class="label" for="year">Year</label>
+              <input class="input" type="number" id="year" name="year" min="1950" max="2030" required placeholder="2023" />
+            </div>
+
+            <div class="field">
+              <label class="label" for="price">Price (PKR)</label>
+              <input class="input" type="number" id="price" name="price" min="0" step="1000" required placeholder="9500000" />
+              <span class="field-hint" id="price-preview">—</span>
+            </div>
+
+            <div class="field">
+              <label class="label" for="mileage">Mileage (km)</label>
+              <input class="input" type="number" id="mileage" name="mileage" min="0" required placeholder="25000" />
+            </div>
+
+            <div class="field">
+              <label class="label" for="type">Body Type</label>
+              <select class="select" id="type" name="type" required>
+                <option value="">Select type</option>
+                <option value="SUV">SUV</option>
+                <option value="Sedan">Sedan</option>
+                <option value="Hatchback">Hatchback</option>
+                <option value="Coupe">Coupe</option>
+                <option value="Truck">Truck</option>
+                <option value="Van">Van</option>
+                <option value="Convertible">Convertible</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label class="label" for="transmission">Transmission</label>
+              <select class="select" id="transmission" name="transmission" required>
+                <option value="">Select transmission</option>
+                <option value="Automatic">Automatic</option>
+                <option value="Manual">Manual</option>
+                <option value="CVT">CVT</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label class="label" for="fuel">Fuel</label>
+              <select class="select" id="fuel" name="fuel" required>
+                <option value="">Select fuel</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="Hybrid">Hybrid</option>
+                <option value="Electric">Electric</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label class="label" for="color">Color</label>
+              <input class="input" type="text" id="color" name="color" placeholder="Pearl White" />
+            </div>
+
+            <div class="field">
+              <label class="label" for="registered">Registered In</label>
+              <input class="input" type="text" id="registered" name="registered" placeholder="Islamabad" />
+            </div>
+
+            <div class="field">
+              <label class="label" for="condition">Condition</label>
+              <select class="select" id="condition" name="condition">
+                <option value="Used - Excellent">Used - Excellent</option>
+                <option value="Used - Like New">Used - Like New</option>
+                <option value="Used - Good">Used - Good</option>
+                <option value="Used - Fair">Used - Fair</option>
+                <option value="Brand New">Brand New</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label class="label" for="status">Status</label>
+              <select class="select" id="status" name="status">
+                <option value="available">Available</option>
+                <option value="reserved">Reserved</option>
+                <option value="sold">Sold</option>
+              </select>
+            </div>
+
+            <div class="field span-2">
+              <label class="label" for="image">Image URL</label>
+              <input class="input" type="url" id="image" name="image" placeholder="https://images.unsplash.com/..." />
+              <div class="image-preview" id="image-preview">
+                <span>Preview will appear here</span>
+              </div>
+            </div>
+
+            <div class="field span-2">
+              <label class="label" for="description">Description</label>
+              <textarea class="textarea" id="description" name="description" rows="3" placeholder="Short summary buyers see on the listing"></textarea>
+            </div>
+
+            <div class="field span-2">
+              <label class="label" for="features">Features</label>
+              <input class="input" type="text" id="features" name="features" placeholder="Sunroof, Push Start, Leather Seats" />
+              <span class="field-hint">Comma-separated list of key features.</span>
+            </div>
+
+            <div class="field span-2">
+              <label class="checkbox-row">
+                <input type="checkbox" id="featured" name="featured" />
+                Mark as featured listing
+              </label>
+            </div>
+
+          </div>
+
+          <div class="form-actions">
+            <a href="cars.html" class="btn btn-outline">Cancel</a>
+            <button type="submit" class="btn btn-primary">Save Car</button>
+          </div>
+        </form>
+      </section>
+
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    bindLayout();
+
+    const form = document.getElementById("car-form");
+    const priceInput = document.getElementById("price");
+    const pricePreview = document.getElementById("price-preview");
+    const imageInput = document.getElementById("image");
+    const imagePreview = document.getElementById("image-preview");
+    const toast = document.getElementById("toast");
+
+    function showToast(message, type = "success") {
+      toast.textContent = message;
+      toast.className = "toast is-visible " + type;
+      setTimeout(() => { toast.className = "toast " + type; }, 2200);
+    }
+
+    priceInput.addEventListener("input", () => {
+      const v = Number(priceInput.value);
+      pricePreview.textContent = v > 0 ? formatPrice(v) : "—";
+    });
+
+    function updateImagePreview() {
+      const url = imageInput.value.trim();
+      if (!url) {
+        imagePreview.innerHTML = `<span>Preview will appear here</span>`;
+        return;
+      }
+      imagePreview.innerHTML = `<img src="${escapeHtml(url)}" alt="Preview" onerror="this.parentElement.innerHTML='<span>Could not load image</span>'" />`;
+    }
+    imageInput.addEventListener("input", updateImagePreview);
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const data = new FormData(form);
+      const featuresText = (data.get("features") || "").toString().trim();
+      const features = featuresText ? featuresText.split(",").map(s => s.trim()).filter(Boolean) : [];
+
+      const car = {
+        make: (data.get("make") || "").toString().trim(),
+        model: (data.get("model") || "").toString().trim(),
+        year: Number(data.get("year")),
+        price: Number(data.get("price")),
+        mileage: Number(data.get("mileage")),
+        transmission: data.get("transmission") || "",
+        fuel: data.get("fuel") || "",
+        color: (data.get("color") || "").toString().trim(),
+        registered: (data.get("registered") || "").toString().trim(),
+        condition: data.get("condition") || "Used - Excellent",
+        type: data.get("type") || "",
+        status: data.get("status") || "available",
+        featured: form.featured.checked,
+        image: (data.get("image") || "").toString().trim() ||
+               "https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=900&q=80",
+        description: (data.get("description") || "").toString().trim(),
+        features
+      };
+
+      if (!car.make || !car.model || !car.year || !car.price) {
+        showToast("Please fill in all required fields.", "error");
+        return;
+      }
+
+      addCar(car);
+      showToast(`Added ${car.make} ${car.model}`, "success");
+      setTimeout(() => { window.location.href = "cars.html"; }, 700);
+    });
+  </script>
+</body>
+</html>

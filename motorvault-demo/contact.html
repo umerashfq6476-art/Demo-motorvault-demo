@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Contact &amp; Test Drive | MotorVault</title>
+  <meta name="description" content="Get in touch with MotorVault — book a test drive, request a quote, or visit our Islamabad showroom." />
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://motorvault.example/contact.html" />
+  <meta property="og:title" content="Contact & Test Drive | MotorVault" />
+  <meta property="og:description" content="Book a test drive or get in touch with MotorVault in Islamabad." />
+  <meta property="og:image" content="assets/og-image.jpg" />
+  <meta property="og:site_name" content="MotorVault" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header id="site-header">
+    <nav id="site-nav" class="container mx-auto px-6 flex items-center justify-between" aria-label="Primary">
+      <a href="index.html" class="brand-logo">MOTOR<span class="accent">VAULT</span></a>
+
+      <ul class="nav-links hidden lg:flex items-center gap-10">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="inventory.html" class="nav-link">Inventory</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
+
+      <div class="hidden lg:flex items-center gap-3">
+        <a href="contact.html#book-test-drive" class="btn-red">Book Test Drive</a>
+        <a href="tel:+923170552359" class="btn-outlined" aria-label="Call us at +92 317 0552359">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+92 317 0552359</span>
+        </a>
+      </div>
+
+      <button type="button" class="lg:hidden icon-btn" id="mobile-menu-toggle" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </nav>
+
+    <div id="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu-header">
+        <a href="index.html" class="brand-logo">MOTOR<span class="accent">VAULT</span></a>
+        <button type="button" class="icon-btn" id="mobile-menu-close" aria-label="Close menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <ul class="mobile-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="inventory.html" class="nav-link">Inventory</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
+      <div class="mobile-actions">
+        <a href="contact.html#book-test-drive" class="btn-red">Book Test Drive</a>
+        <a href="tel:+923170552359" class="btn-outlined">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+92 317 0552359</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="contact-hero" class="inventory-hero" aria-label="Contact Hero">
+      <div class="container mx-auto px-6">
+        <h1 class="inventory-title"><span class="title-accent" aria-hidden="true"></span>GET IN TOUCH</h1>
+        <p class="inventory-subtitle">Questions, offers, test drives — we usually reply within the hour.</p>
+      </div>
+    </section>
+
+    <section id="contact-info" class="contact-quick reveal-on-scroll" aria-label="Quick Contact Options">
+      <div class="container mx-auto px-6">
+        <div class="quick-grid">
+
+          <a href="tel:+923170552359" class="quick-card">
+            <span class="quick-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            <div class="quick-body">
+              <h3 class="quick-title">Call Us</h3>
+              <p class="quick-meta">Sales, finance, test drives</p>
+              <p class="quick-value">+92 317 0552359</p>
+            </div>
+          </a>
+
+          <a href="https://wa.me/923170552359" target="_blank" rel="noopener noreferrer" class="quick-card quick-card--whatsapp">
+            <span class="quick-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.005 2C6.487 2 2.012 6.475 2.012 11.993a9.96 9.96 0 0 0 1.392 5.078L2 22l5.046-1.32a9.97 9.97 0 0 0 4.958 1.263h.004c5.518 0 9.993-4.475 9.993-9.993S17.523 2 12.005 2z"/></svg>
+            </span>
+            <div class="quick-body">
+              <h3 class="quick-title">WhatsApp</h3>
+              <p class="quick-meta">Fastest reply — usually under an hour</p>
+              <p class="quick-value">+92 317 0552359</p>
+            </div>
+          </a>
+
+          <a href="mailto:info@motorvault.pk" class="quick-card">
+            <span class="quick-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </span>
+            <div class="quick-body">
+              <h3 class="quick-title">Email</h3>
+              <p class="quick-meta">Inquiries, paperwork, partnerships</p>
+              <p class="quick-value">info@motorvault.pk</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contact-form" class="contact-main reveal-on-scroll" aria-label="Contact Form and Map">
+      <div class="container mx-auto px-6">
+        <div class="contact-layout">
+
+          <div class="contact-map-col">
+            <div class="contact-map">
+              <iframe
+                src="https://www.google.com/maps?q=Blue+Area+Islamabad&output=embed"
+                title="MotorVault Showroom — Blue Area, Islamabad"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen></iframe>
+            </div>
+
+            <div class="contact-info">
+              <h3 class="contact-info-title">Showroom</h3>
+              <ul class="contact-info-list">
+                <li>
+                  <span class="info-icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  </span>
+                  <span>Plot 24, Jinnah Avenue, Blue Area, Islamabad 44000</span>
+                </li>
+                <li>
+                  <span class="info-icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  </span>
+                  <span>Mon–Sat 9 AM – 7 PM · Sun 11 AM – 5 PM</span>
+                </li>
+                <li>
+                  <span class="info-icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  </span>
+                  <a href="tel:+923170552359">+92 317 0552359</a>
+                </li>
+                <li>
+                  <span class="info-icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  </span>
+                  <a href="mailto:info@motorvault.pk">info@motorvault.pk</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <form id="general-contact-form" class="contact-form" novalidate>
+            <h2 class="contact-form-title">Send us a message</h2>
+            <p class="contact-form-sub">Tell us what you're after — we'll be back to you within the hour during business hours.</p>
+
+            <div class="form-row two-col">
+              <label class="form-field">
+                <span class="form-label">Full Name *</span>
+                <input type="text" name="name" required autocomplete="name" placeholder="Your name" />
+              </label>
+              <label class="form-field">
+                <span class="form-label">Phone *</span>
+                <input type="tel" name="phone" required autocomplete="tel" placeholder="+92 317 0552359" />
+              </label>
+            </div>
+
+            <div class="form-row two-col">
+              <label class="form-field">
+                <span class="form-label">Email *</span>
+                <input type="email" name="email" required autocomplete="email" placeholder="you@email.com" />
+              </label>
+              <label class="form-field">
+                <span class="form-label">Inquiry Type *</span>
+                <select name="inquiry-type" required>
+                  <option value="" disabled selected>Choose one…</option>
+                  <option value="buy">Buy a Car</option>
+                  <option value="sell">Sell a Car</option>
+                  <option value="test-drive">Test Drive</option>
+                  <option value="financing">Financing</option>
+                  <option value="other">Other</option>
+                </select>
+              </label>
+            </div>
+
+            <label class="form-field">
+              <span class="form-label">Car of Interest</span>
+              <input type="text" name="car-interest" placeholder="e.g. Toyota Fortuner 2022" />
+            </label>
+
+            <label class="form-field">
+              <span class="form-label">Message *</span>
+              <textarea name="message" rows="5" required placeholder="What can we help you with?"></textarea>
+            </label>
+
+            <button type="submit" class="btn-red btn-lg form-submit">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              <span>Send Inquiry</span>
+            </button>
+
+            <p class="form-status" id="contact-form-status" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Thanks! Your inquiry is in — we'll reply within the hour.
+            </p>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="book-test-drive" class="testdrive reveal-on-scroll" aria-label="Book a Test Drive">
+      <div class="container mx-auto px-6">
+        <div class="testdrive-card">
+          <div class="testdrive-header">
+            <span class="testdrive-eyebrow">Test Drive</span>
+            <h2 class="testdrive-title">Book a test drive — on us</h2>
+            <p class="testdrive-sub">Pick a car, pick a time, and we'll have it cleaned and ready when you arrive. Free, no obligation.</p>
+          </div>
+
+          <form id="testdrive-form" class="testdrive-form" novalidate>
+
+            <div class="form-row two-col">
+              <label class="form-field">
+                <span class="form-label">Full Name *</span>
+                <input type="text" name="td-name" required autocomplete="name" placeholder="Your name" />
+              </label>
+              <label class="form-field">
+                <span class="form-label">Phone *</span>
+                <input type="tel" name="td-phone" required autocomplete="tel" placeholder="+92 317 0552359" />
+              </label>
+            </div>
+
+            <label class="form-field">
+              <span class="form-label">Car Model *</span>
+              <input type="text" name="td-car" required placeholder="e.g. Toyota Fortuner 2022 — Sigma 4" />
+            </label>
+
+            <div class="form-row two-col">
+              <label class="form-field">
+                <span class="form-label">Preferred Date *</span>
+                <input type="date" name="td-date" required />
+              </label>
+              <label class="form-field">
+                <span class="form-label">Preferred Time *</span>
+                <select name="td-time" required>
+                  <option value="" disabled selected>Choose a slot…</option>
+                  <option value="09:00">09:00 AM</option>
+                  <option value="11:00">11:00 AM</option>
+                  <option value="13:00">01:00 PM</option>
+                  <option value="15:00">03:00 PM</option>
+                  <option value="17:00">05:00 PM</option>
+                </select>
+              </label>
+            </div>
+
+            <button type="submit" class="btn-red btn-lg form-submit">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span>Book My Test Drive</span>
+            </button>
+
+            <p class="form-status" id="testdrive-form-status" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Booked! We'll confirm by phone shortly.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <a href="https://wa.me/923170552359" target="_blank" rel="noopener noreferrer" class="whatsapp-fab" aria-label="Chat on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.005 2C6.487 2 2.012 6.475 2.012 11.993a9.96 9.96 0 0 0 1.392 5.078L2 22l5.046-1.32a9.97 9.97 0 0 0 4.958 1.263h.004c5.518 0 9.993-4.475 9.993-9.993S17.523 2 12.005 2z"/></svg>
+    <span class="whatsapp-fab-pulse" aria-hidden="true"></span>
+  </a>
+
+  <footer id="site-footer">
+    <div class="footer-top-line" aria-hidden="true"></div>
+    <div class="container mx-auto px-6">
+      <div class="footer-grid">
+        <div class="footer-col footer-col--brand">
+          <a href="index.html" class="brand-logo footer-logo">MOTOR<span class="accent">VAULT</span></a>
+          <p class="footer-tagline">Drive the Difference</p>
+          <ul class="social-list" aria-label="Social media">
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a></li>
+            <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a></li>
+            <li><a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+            </a></li>
+            <li><a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.85a8.16 8.16 0 0 0 4.77 1.52V6.92a4.82 4.82 0 0 1-1.84-.23z"/></svg>
+            </a></li>
+          </ul>
+          <p class="footer-blurb">Pakistan's most trusted car marketplace.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="inventory.html">Inventory</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html#book-test-drive">Book Test Drive</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Inventory</h4>
+          <ul class="footer-links">
+            <li><a href="inventory.html?type=suv">SUVs</a></li>
+            <li><a href="inventory.html?type=sedan">Sedans</a></li>
+            <li><a href="inventory.html?type=luxury">Luxury Cars</a></li>
+            <li><a href="inventory.html?type=budget">Budget Cars</a></li>
+            <li><a href="inventory.html?sort=new">New Arrivals</a></li>
+            <li><a href="contact.html#sell">Sell Your Car</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Contact Us</h4>
+          <ul class="footer-contact">
+            <li>
+              <span class="contact-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <span>Blue Area, Islamabad</span>
+            </li>
+            <li>
+              <span class="contact-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </span>
+              <a href="tel:+923170552359">+92 317 0552359</a>
+            </li>
+            <li>
+              <span class="contact-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </span>
+              <a href="mailto:info@motorvault.pk">info@motorvault.pk</a>
+            </li>
+            <li>
+              <span class="contact-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </span>
+              <span>Mon–Sat: 9 AM – 7 PM</span>
+            </li>
+          </ul>
+          <a href="https://wa.me/923170552359" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.005 2C6.487 2 2.012 6.475 2.012 11.993a9.96 9.96 0 0 0 1.392 5.078L2 22l5.046-1.32a9.97 9.97 0 0 0 4.958 1.263h.004c5.518 0 9.993-4.475 9.993-9.993S17.523 2 12.005 2zm0 18.13h-.003a8.13 8.13 0 0 1-4.143-1.135l-.297-.176-3.077.807.822-2.998-.193-.307a8.12 8.12 0 0 1-1.243-4.328c0-4.484 3.65-8.134 8.137-8.134 2.172 0 4.213.846 5.748 2.383a8.077 8.077 0 0 1 2.382 5.755c-.001 4.483-3.65 8.133-8.133 8.133z"/></svg>
+            <span>Chat on WhatsApp</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 MotorVault. All rights reserved. Crafted by Umer.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" id="scroll-to-top" class="scroll-top-btn" aria-label="Scroll to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
