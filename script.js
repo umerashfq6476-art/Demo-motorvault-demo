@@ -309,21 +309,23 @@
     revealTargets.forEach((el) => el.classList.add('is-visible'));
   }
 
-  // Dedicated counter observer — fires independently of reveal-on-scroll
-  if ('IntersectionObserver' in window && statCounters.length) {
+  // Dedicated counter observer — observe the parent section so the whole row of
+  // counters fires together as soon as any part of the stats bar enters view.
+  const statsSection = document.getElementById('stats-bar');
+  const runAllCounters = () => statCounters.forEach((el) => animateCounter(el));
+
+  if ('IntersectionObserver' in window && statCounters.length && statsSection) {
     const counterIO = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
-        animateCounter(entry.target);
-        observer.unobserve(entry.target);
+        runAllCounters();
+        observer.disconnect();
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -10% 0px' });
+    }, { threshold: 0, rootMargin: '0px 0px -80px 0px' });
 
-    statCounters.forEach((el) => counterIO.observe(el));
-  } else {
-    statCounters.forEach((c) => {
-      c.textContent = (parseInt(c.dataset.target, 10) || 0).toLocaleString() + (c.dataset.suffix || '');
-    });
+    counterIO.observe(statsSection);
+  } else if (statCounters.length) {
+    runAllCounters();
   }
 
   // Featured vehicles filter
