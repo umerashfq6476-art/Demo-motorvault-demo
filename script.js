@@ -312,20 +312,40 @@
   // Dedicated counter observer — observe the parent section so the whole row of
   // counters fires together as soon as any part of the stats bar enters view.
   const statsSection = document.getElementById('stats-bar');
-  const runAllCounters = () => statCounters.forEach((el) => animateCounter(el));
+  let countersFired = false;
+  const runAllCounters = () => {
+    if (countersFired) return;
+    countersFired = true;
+    statCounters.forEach((el) => animateCounter(el));
+  };
 
-  if ('IntersectionObserver' in window && statCounters.length && statsSection) {
-    const counterIO = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        runAllCounters();
-        observer.disconnect();
+  if (statCounters.length) {
+    const target = statsSection || statCounters[0];
+
+    if ('IntersectionObserver' in window) {
+      const counterIO = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          runAllCounters();
+          observer.disconnect();
+        });
+      }, { threshold: 0, rootMargin: '0px 0px 0px 0px' });
+
+      counterIO.observe(target);
+
+      // Safety net: if the section is already on-screen at page load,
+      // fire immediately on the next frame (observer is async).
+      requestAnimationFrame(() => {
+        const rect = target.getBoundingClientRect();
+        const inView = rect.top < window.innerHeight && rect.bottom > 0;
+        if (inView) {
+          runAllCounters();
+          counterIO.disconnect();
+        }
       });
-    }, { threshold: 0, rootMargin: '0px 0px -80px 0px' });
-
-    counterIO.observe(statsSection);
-  } else if (statCounters.length) {
-    runAllCounters();
+    } else {
+      runAllCounters();
+    }
   }
 
   // Featured vehicles filter
